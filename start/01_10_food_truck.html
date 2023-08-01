@@ -16,6 +16,21 @@
 
   <script>
     // Write your code here
+    function foodTruckFestival(menus){
+      let flatMenu = menus.flat()
+      let combainedMenu = new Set()
+
+      flatMenu.forEach(item => combainedMenu.add(item))
+
+      const menuNode = document.querySelector('#combined-menu')
+      combainedMenu.forEach(item => {
+        let newNode = document.createElement("li")
+        newNode.textContent = item
+        menuNode.appendChild(newNode)
+      })
+    }
+
+    foodTruckFestival([['chappathi', 'porotta'], ['bread'], ['idli', 'chappathi']])
 
   </script>
 </body>

@@ -16,6 +16,29 @@
 
   <script>
     // Write your code here
+    function* getStop(){
+      yield 'Aluva'
+      yield 'Muttom'
+      yield 'Kalamassery'
+      yield 'Cusat'
+      yield 'Pathadipalam'
+      yield 'Edappally'
+    }
+
+    const metroTrainLine = getStop()
+
+    const btnNode = document.querySelector('#next-stop')
+
+    btnNode.addEventListener('click', () => {
+      let currStop = metroTrainLine.next()
+      
+      if(currStop.done){
+        console.log('We made it');
+        btnNode.setAttribute('disabled', true)
+      }else{
+        console.log(currStop.value);
+      }
+    })
 
   </script>
 </body>
